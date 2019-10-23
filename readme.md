@@ -29,6 +29,17 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - composer install
 - скопировать .env.example и превратить его в .env (должно быть 2 файла)
 
+## Магазин электроустановочных изделий
+
+Описание проекта
+
+## Используемые технологии
+
+- PHP
+- MySql
+- Apache2
+- Laravel
+
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
