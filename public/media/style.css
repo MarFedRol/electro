@@ -1,0 +1,63 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #d9decd;
+}
+#logo {padding-top: 11px;
+	float: left;
+}
+#logo_text{
+	text-align: center;
+	padding-top: 50px;
+	font-size: 48px;
+}
+#header {
+	background-image: url("img/tools.png");
+	height:210px;
+}
+.topmenu{
+	display: flex;
+	width: 100%;background: silver;
+
+	
+}
+.topmenu a{
+	flex: 1;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	border-right: solid 1px grey;
+}
+.topmenu a:hover{
+		color: blue;
+		background-image: url("img/tools.png");
+	text-shadow: 1px 1px 1px grey;
+}
+#body {
+	margin: 10px;
+	padding: 10px;
+}
+.col-md-8 h2{
+
+	text-align: center;
+}
+.card-row {
+	display: flex;
+	justify-content: space-between;
+}
+#foother{
+	text-align: center;
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+@media screen and (max-width: 700px){
+	#logo_text{
+		font-size: 20px;
+	}
+	.topmenu{
+		flex-direction: column;
+	}
+}
