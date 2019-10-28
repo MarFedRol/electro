@@ -17,11 +17,11 @@
     <h1 id="logo_text">Магазин электроустановочных изделий</h1>
 </div>
 <nav class="topmenu">
-    <a href="#">Каталог</a>
-    <a href="#">О нас</a>
-    <a href="#">Контакты</a>
-    <a href="#">Доставка</a>
-    <a href="#">Оплата</a>
+    <a href="{{asset('catalog')}}">Каталог</a>
+    <a href="{{asset('about')}}">О нас</a>
+    <a href="{{asset('contacts')}}">Контакты</a>
+    <a href="{{asset('delivery')}}">Доставка</a>
+    <a href="{{asset('payments')}}">Оплата</a>
 
 </nav>
 <div id="body">
