@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
+use App\Product;
+use Auth;
 
 class HomeController extends Controller
+
 {
-    /**
+   /**
      * Create a new controller instance.
      *
      * @return void
@@ -25,4 +28,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+    public function postIndex(ProductRequest $r){
+        $r['user_id'] = Auth::user()->id;
+        $r['status'] = 'new';
+        $r['showhide'] = 1;
+        $r['picture'] = '';
+        Product::create($r->all());
+        return redirect()->back();
+    
+} 
 }

@@ -7,7 +7,7 @@
 <meta name="keywords" content="ok">
 <meta name="author" content="Федчик-Ролич Марина">
 <link type="text/css" href="media/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-<link type="text/css" href="media/style.css" rel="stylesheet"/>
+<link type="text/css" href="{{asset('media/style.css')}}" rel="stylesheet"/>
 
 
 </head>
