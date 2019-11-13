@@ -1,9 +1,20 @@
 @extends('layouts.base')
-
+                @section('scripts')
+                @parent
+                <script src="{{asset('public/ckeditor5-build-classic/ckeditor.js')}}"></script>
+                <script>
+ClassicEditor
+    .create( document.querySelector( '#body' ), {
+    } )
+    .catch( error => {
+        console.log( error );
+    } );
+                </script>
+                @endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -25,12 +36,13 @@
                 </div>
             <div class="form-group">
                 <label for="body">Полное описание</label>
+
                 <textarea type="text" class="form-control" id="body" name="body"  placeholder="Введите полное описние"></textarea>
                                  @error('body')
                                     <span class="alert alert-danger myAlert" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                @enderror
+                                @enderror
             </div>
 
             <div class="form-group">
@@ -38,12 +50,13 @@
                 <textarea type="text" class="form-control" id="small_body" name="small_body" for="small_body" placeholder="Введите краткое описание"></textarea>
             </div>
             <div class="form-group">
+                  
                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Категории</label>
             <select class="custom-select my-1 mr-sm-2" id="category_id" name="category_id" for="category_id">
-            <option selected>Розетки</option>
-            <option value="1">Выключатели</option>
-            <option value="2">Рамки</option>
-            <option value="3">Удлиннители</option>
+            <option selected>Выберите категорию</option>
+            @foreach($cats as $one)
+            <option value="{{$one->id}}">{{$one->name}}</option>
+                @endforeach
             </select>
             </div>
                 @error('category_id')

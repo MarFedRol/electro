@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use App\Category;
 use Auth;
 
 class HomeController extends Controller
@@ -26,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $cats=Category::all();
+
+        return view('home', compact('cats'));
     }
 
 

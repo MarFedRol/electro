@@ -6,7 +6,7 @@
 <meta name="description" content="1-2-3">
 <meta name="keywords" content="ok">
 <meta name="author" content="Федчик-Ролич Марина">
-<link type="text/css" href="media/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link type="text/css" href="{{asset('media/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
 <link type="text/css" href="{{asset('media/style.css')}}" rel="stylesheet"/>
 
 
@@ -24,7 +24,7 @@
     <a href="{{asset('payments')}}">Оплата</a>
 
 </nav>
-<div id="body">
+<div id="body_m">
     <div class="con">
         <div class="row">
 
@@ -86,8 +86,12 @@
 <div id="foother">
     <a href="mailto:marfed05@mail.ru">marfed05@mail.ru</a>
 </div>
+<script type="text/javascript" src="{{asset('media/jquery-3.4.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('media/bootstrap/js/bootstrap.min.js')}}"></script>
 
 <script type="text/javascript" href="index.js"></script>
+    @section('scripts')
+    @show
 </body>
 
 </html>
