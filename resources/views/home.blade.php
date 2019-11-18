@@ -19,7 +19,7 @@ ClassicEditor
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-        <form action="{{asset('home')}}" method="POST">
+        <form action="{{asset('home')}}" method="POST" enctype="multipart/form-data">
             {!!csrf_field()!!}
             <div class="form-group">
                  <label for="formGroupExampleInput" >Название товара</label>
