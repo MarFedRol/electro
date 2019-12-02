@@ -29,10 +29,9 @@
         <div class="row">
 
         <div class="col-md-2">
-        <a class="btn btn-info btn-block" href="#">Розетки</a>
-        <a class="btn btn-info btn-block" href="#">Выключатели</a>
-        <a class="btn btn-info btn-block" href="#">Рамки</a>
-        <a class="btn btn-info btn-block" href="#">Удлинители</a>
+            @foreach($v_categories as $cat)
+        <a class="btn btn-info btn-block" href="{{asset('category/'.$cat->id)}}">{{$cat->name}}</a>
+            @endforeach
     </div>
     <div class="col-md-8">
       @yield('content')

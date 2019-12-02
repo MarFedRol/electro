@@ -47,4 +47,23 @@ class HomeController extends Controller
         return redirect()->back();
     
 } 
+
+    public function postEdit (ProductRequest $r, $id = null){
+        $obj = Product::find($id);
+        $r['user_id'] = Auth::user()->id;
+        $r['status'] = 'new';
+        $r['showhide'] = 1;
+        $pic = \App::make('\App\Libs\Imag')->url($_FILES['picture1']['tmp_name']);
+        if ($pic){
+            $p_path = public_path('uploads/'.$obj->user_id.'/'.$obj->picture);
+            if (file_exists($p_path)){
+                @unlink($p_path);
+            }
+            $r['picture'] = $pic;
+        }else{
+            $r['picture'] = '';
+        }
+        $obj->update($r->all());
+        return redirect()->back();
+    }
 }
