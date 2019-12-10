@@ -28,8 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $cats=Category::all();
+        $products=Product::where('user_id', Auth::user()->id)->paginate(10);
+        return view('home', compact('cats', 'products'));
 
-        return view('home', compact('cats'));
     }
 
 
@@ -64,6 +65,6 @@ class HomeController extends Controller
             $r['picture'] = '';
         }
         $obj->update($r->all());
-        return redirect()->back();
+        return redirect('home');
     }
 }

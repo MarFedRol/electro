@@ -73,6 +73,33 @@ ClassicEditor
 
             <button type="submit" class="btn btn-primary">Сохранить</button>
         </form>
+
+        <table class="table table-bordered table-striped" width="100%">
+            <tr>
+               <th width="200px">Изображение</th>
+               <th>Название</th>
+               <th>Описание</th>
+               <th>Категории</th>
+               <th>Действие</th>
+            </tr>
+            @foreach($products as $one)
+                <tr>
+                    <td>
+                        @if($one->picture)
+                        <img src="{{asset('uploads/'.$one->user_id.'/s_'.$one->picture)}}" width="100%">
+                        @endif
+                    </td>
+                    <td>{{$one->nameProduct}}</td>
+                    <td>{{!!$one->description!!}}</td>
+                    <td>{{isset($one->catalogs->name)?$one->catalogs->name:" "}}</td>
+                    <td>
+                        <a href="{{asset('home/edit/'.$one->id)}}" class="btn btn-block btn-success">Редактировать</a>
+                        <a href="{{asset('home/delete/'.$one->id)}}" class="btn btn-block btn-default">Удалить</a>
+                    </td>
+                </tr>
+                @endforeach
+        </table>
+        {{!!$products->links()!!}}
                 </div>
             </div>
         </div>
