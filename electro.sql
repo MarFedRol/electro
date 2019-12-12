@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 06 2019 г., 21:54
+-- Время создания: Дек 12 2019 г., 21:08
 -- Версия сервера: 8.0.12
 -- Версия PHP: 7.2.10
 
@@ -34,6 +34,16 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Розетки', NULL, NULL),
+(2, 'Выключатели', NULL, NULL),
+(3, 'Рамки', NULL, NULL),
+(4, 'Удлиннители', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -138,7 +148,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `body`, `small_body`, `showhide`, `category_id`, `picture`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Дафна', '10', 'gjkyjt', 'краткое', '0', 3, '', 1, 'new', '2019-11-06 15:33:45', '2019-11-06 15:33:45');
+(1, 'Дафна', '10', 'gjkyjt', 'краткое', '0', 3, '', 1, 'new', '2019-11-06 15:33:45', '2019-11-06 15:33:45'),
+(2, 'Дафна', '10', '<p>Ghghjhgkjhgk ugkgugkugkugkhgkg jgkgkgkguffkfuyf ukukkuygfkugff</p>', 'fsgrdj', '0', 1, '19_11_18_08_40.jpg', 1, 'new', '2019-11-18 17:55:42', '2019-11-18 17:55:42');
 
 -- --------------------------------------------------------
 
@@ -219,7 +230,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -243,7 +254,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
