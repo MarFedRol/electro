@@ -8,8 +8,8 @@
 <meta name="author" content="Федчик-Ролич Марина">
 <link type="text/css" href="{{asset('media/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
 <link type="text/css" href="{{asset('media/style.css')}}" rel="stylesheet"/>
-
-
+@section('styles')
+@show
 </head>
 <body>
 <div id="header">

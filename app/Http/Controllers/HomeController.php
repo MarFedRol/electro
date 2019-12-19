@@ -32,7 +32,11 @@ class HomeController extends Controller
         return view('home', compact('cats', 'products'));
 
     }
-
+    public function getEdit($id=null){
+                $cats=Category::all();
+                $product=Product::find($id);
+        return view('edit', compact('cats', 'product'));
+    }
 
     public function postIndex(ProductRequest $r){
         $r['user_id'] = Auth::user()->id;
@@ -66,5 +70,10 @@ class HomeController extends Controller
         }
         $obj->update($r->all());
         return redirect('home');
+    }
+    public function getDelete($id=null){
+         $obj = Product::find($id);
+         $obj->delete();
+         return redirect('home');
     }
 }
