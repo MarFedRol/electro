@@ -1,6 +1,8 @@
 <?php
 Auth::routes();
-Route::get('/', 'BaseController@getIndex');
+Route::group(['middleware'=>['lang']], function(){
+	Route::get('/', 'BaseController@getIndex');
+});
 Route::get('category/{id}', 'CategoryController@getIndex');
 //home
 Route::get('/home', 'HomeController@index')->name('home');

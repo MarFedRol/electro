@@ -15,10 +15,39 @@
 <div id="header">
     <a href="#"><img id="logo" src="media/img/logo.png" alt="logo"></a>
     <h1 id="logo_text">Магазин электроустановочных изделий</h1>
+<div id="menu">
+  <ul> 
+    <li><a href="#">
+                                <a href="#">
+                            <img id="imgNavSel" src="{{(isset($_COOKIE['lang']))?'/lang/'.$_COOKIE['lang'].'.jpg':'lang/ru.jpg'}}" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;
+                            <span id="lanNavSel">{{(isset($_COOKIE['lang']))?$_COOKIE['lang']:'ru'}}</span> <span class="caret"></span></a>
+    </a>
+      <div class="dropdown">
+    <ul class="nav">
+    <li class="dropdown_">
+
+                        <ul>
+                            <li><a id="navFra" href="/?lang=fr" class="language">
+                                    <img id="imgNavFra" src="{{asset('lang/fr.jpg')}}" alt="France" class="img-thumbnail icon-small">&nbsp;
+                                    <span id="lanNavFra">Française</span>&nbsp;</a></li>
+                            <li><a id="navEng" href="/?lang=en" class="language">
+                                    <img id="imgNavEng" src="{{asset('lang/en.jpg')}}" alt="English" class="img-thumbnail icon-small">&nbsp;
+                                    <span id="lanNavEng">English</span>&nbsp;</a></li>
+                            <li><a id="navRus" href="/?lang=ru" class="language">
+                                    <img id="imgNavRus" src="{{asset('lang/ru.jpg')}}" alt="Russia" class="img-thumbnail icon-small">&nbsp;
+                                    <span id="lanNavRus">Русский</span>&nbsp;</a></li>
+                        </ul>
+                    </li>
+                </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+ 
 </div>
 <nav class="topmenu">
-    <a href="{{asset('catalog')}}">Каталог</a>
-    <a href="{{asset('about')}}">О нас</a>
+    <a href="{{asset('catalog')}}">{{__('base.catalog')}}</a>
+    <a href="{{asset('about')}}">{{__('base.about')}}</a>
     <a href="{{asset('contacts')}}">Контакты</a>
     <a href="{{asset('delivery')}}">Доставка</a>
     <a href="{{asset('payments')}}">Оплата</a>
@@ -88,7 +117,16 @@
 <script type="text/javascript" src="{{asset('media/jquery-3.4.1.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('media/bootstrap/js/bootstrap.min.js')}}"></script>
 
-<script type="text/javascript" href="index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#menu li").mouseover(function(){ 
+    $(".dropdown").show();
+  });
+    $(".dropdown_").mouseout(function(){ 
+    $(".dropdown").hide();
+  });
+})
+</script>
     @section('scripts')
     @show
 </body>
